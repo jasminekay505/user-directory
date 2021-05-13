@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
-function Search(props) { 
-    return ( 
-        <form className="search">
+function Search(props) {
+  return (
+    <form className="search">
       <div className="form-group">
         <input
           value={props.search}
@@ -18,7 +18,7 @@ function Search(props) {
         </button>
       </div>
     </form>
-    )
+  )
 }
 
 export default Search;
