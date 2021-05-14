@@ -12,21 +12,21 @@ class Users extends Component {
 
     componentDidMount() {
         API.getUsers()
-            .then(res => this.setState({
+            .then((res) => this.setState({
                 users: res.data.results,
                 filteredUsers: res.data.results
             }))
             .catch(err => console.log(err));
     }
 
-    handleInputChange = event => {
-        this.setState({ search: event.target.value });
-        //this.filterUser(event.target.value.toLowerCase().trim());
+    handleInputChange = (event) => {
+        const value  = event.target.value;
+        this.setState({ search : value });
+        this.filterUser(value);
     };
 
     handleFormSubmit = event => {
         event.preventDefault();
-
     }
 
     filterUser = (input) => {
