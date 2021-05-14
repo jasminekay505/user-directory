@@ -20,8 +20,8 @@ class Users extends Component {
     }
 
     handleInputChange = (event) => {
-        const value  = event.target.value;
-        this.setState({ search : value });
+        const value = event.target.value;
+        this.setState({ search: value });
         this.filterUser(value.toLowerCase().trim());
     };
 
@@ -74,17 +74,17 @@ class Users extends Component {
 
     render() {
         return (
-            <div className = "container">
+            <div className="container">
                 <Search
                     value={this.state.search}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
                 <Table
-                state = {this.state}
-                filterUser = {this.filterUser}
-                sortUserFirst = {this.sortUserFirst}
-                sortUserLast = {this.sortUserLast}
+                    state={this.state}
+                    filterUser={this.filterUser}
+                    sortUserFirst={this.sortUserFirst}
+                    sortUserLast={this.sortUserLast}
                 />
             </div>
         );
