@@ -6,11 +6,12 @@ This application helps an employee or manager view names and emails for other em
 This application was created using the [Random User API](https://randomuser.me/).
 
 ## Link to Deployed Application
+https://jasminekay505.github.io/user-directory/
 
 ## Usage
 Click on the column title to sort the employees. Use the search bar to search employees by name. 
 
-## Technologies Used:
+## Technologies Used
 - Random User API
 - React
 
