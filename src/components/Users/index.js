@@ -22,7 +22,7 @@ class Users extends Component {
     handleInputChange = (event) => {
         const value  = event.target.value;
         this.setState({ search : value });
-        this.filterUser(value);
+        this.filterUser(value.toLowerCase().trim());
     };
 
     handleFormSubmit = event => {
@@ -34,8 +34,8 @@ class Users extends Component {
             this.setState({
                 filteredUsers: this.state.users.filter((user) => {
                     return (
-                        user.name.first.includes(input) ||
-                        user.name.last.includes(input)
+                        user.name.first.toLowerCase().includes(input) ||
+                        user.name.last.toLowerCase().includes(input)
                     );
                 }),
             });
