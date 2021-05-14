@@ -21,7 +21,7 @@ class Users extends Component {
 
     handleInputChange = event => {
         this.setState({ search: event.target.value });
-        this.filterUser(event.target.value.trim());
+        //this.filterUser(event.target.value.toLowerCase().trim());
     };
 
     handleFormSubmit = event => {
@@ -29,20 +29,18 @@ class Users extends Component {
 
     }
 
-    filterUser = (search) => {
-        if (search) {
+    filterUser = (input) => {
+        if (input) {
             this.setState({
                 filteredUsers: this.state.users.filter((user) => {
                     return (
-                        user.name.first.includes(search) ||
-                        user.name.last.includes(search) ||
-                        user.phone.includes(search) ||
-                        user.email.includes(search)
+                        user.name.first.includes(input) ||
+                        user.name.last.includes(input)
                     );
                 }),
             });
         } else {
-            this.setState({ filteredUsers: this.state.employees });
+            this.setState({ filteredUsers: this.state.users });
         }
     };
 
@@ -79,7 +77,7 @@ class Users extends Component {
             <div className = "container">
                 <Search
                     value={this.state.search}
-                    handleInputchange={this.handleInputChange}
+                    handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
                 <Table

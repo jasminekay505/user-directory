@@ -3,22 +3,25 @@ import "./style.css";
 
 function Search(props) {
   return (
-    <form className="search">
+    <form>
       <div className="form-group">
+        <label htmlFor="search">Search:</label>
         <input
-          value={props.search}
           onChange={props.handleInputChange}
-          type="search"
+          value={props.search}
+          name="search"
+          type="text"
           className="form-control"
-          placeholder="Search for a User"
-          id="searchInput"
+          placeholder="Search For a User"
+          id="search"
         />
-        <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
+        <br />
+        <button onClick={props.handleFormSubmit} className="btn btn-success">
           Search
         </button>
       </div>
     </form>
-  )
+  );
 }
 
 export default Search;
